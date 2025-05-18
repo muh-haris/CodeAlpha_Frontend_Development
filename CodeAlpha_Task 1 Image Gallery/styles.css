@@ -1,0 +1,88 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.gallery-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.prev, .next {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
